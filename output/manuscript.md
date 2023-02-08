@@ -26,8 +26,8 @@ header-includes: |
   <meta name="dc.date" content="2023-02-08" />
   <meta name="citation_publication_date" content="2023-02-08" />
   <meta property="article:published_time" content="2023-02-08" />
-  <meta name="dc.modified" content="2023-02-08T16:39:39+00:00" />
-  <meta property="article:modified_time" content="2023-02-08T16:39:39+00:00" />
+  <meta name="dc.modified" content="2023-02-08T17:15:29+00:00" />
+  <meta property="article:modified_time" content="2023-02-08T17:15:29+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -112,26 +112,27 @@ Jane Roe \<jane.roe@whatever.edu\>.
 
 ## Abstract {.page_break_before}
 
-This paper proposes a novel approach to improve the prediction of bacterial CRISPRi guide efficiency through data integration and automated machine learning.
-We combine the existing gRNA design rules with the features generated from the machine learning algorithms to form a hybrid prediction model.
-This hybrid model is then trained with a large-scale dataset to optimize the gRNA selection.
-Our results demonstrate that the hybrid model significantly outperforms the state-of-the-art models in predicting bacterial CRISPRi guide efficiency.
+Among the defend strategies developed in microbes over millions of years, the innate adaptive CRISPR-Cas immune systems have spread across most of bacteria and archaea. The robust non-self-targeting nature and the diversity of CRISPR-Cas systems have laid the foundation for the flexibility, simplicity, and specificity of the CRISPR-based genetic editing tools. The efficient administration of CRISPR-based tools demands rational designs to maximize the on-target efficiency and off-target specificity. Specifically, the selection of guide RNAs (gRNAs), which play a crucial role in the target recognition of CRISPR-Cas systems, is non-trivial. Despite the fact that the emerging machine learning techniques provide a solution to aid in gRNA design with prediction algorithms, design rules for many CRISPR-Cas systems are ill-defined, hindering their broader applications. 
 
-This work presents a novel machine learning model that improves the prediction of CRISPRi guide efficiency in bacteria.
-By leveraging feature engineering, data integration, interpretable AI, and automated machine learning, the model is able to systematically investigate the influential factors that attribute to the extent of depletion in CRISPRi genome-wide essentiality screens in Escherichia coli.
-This approach allows for the segregation of confounding gene-specific effects and provides a better estimate of guide efficiency, resulting in improved performance compared to existing tools.
-Additionally, the model is able to extract design rules for robust gene silencing, such as the preference for cytosine and disfavoring for guanine and thymine within and around the PAM sequence.
-This research is made freely accessible through a web-based tool at www.ciao.helmholtz-hiri.de.
+CRISPR interference (CRISPRi), an alternative gene silencing technique using a catalytically dead Cas protein to interfere with transcription, is one of these CRISPR-Cas systems. The under-investigated design rules for CRISPRi limit its promising application for functional interrogation, pathway manipulation, and genome-wide screens in bacteria. In this work, we first developed a state-of-art predictive machine learning model for guide silencing efficiency in bacteria leveraging the advantages of feature engineering, data integration, interpretable AI, and automated machine learning. We systematically investigated the influential factors that attribute to the extent of depletion in multiple CRISPRi genome-wide essentiality screens in Escherichia coli and demonstrated the surprising dominant contribution of gene-specific effects, such as gene expression level. This observation allowed us to segregate the confounding gene-specific effects using the mixed-effect random forest (MERF) model to provide a better estimate of guide efficiency, together with the improvement led by integrating multiple screens. The MERF model outperformed existing tools in the independent datasets, including small-scale fluorescence-based and miller assays involving only dozens of gRNAs and a high-throughput saturating screen involving 750 gRNAs. We next interpreted the predictive model to extract the design rules for robust gene silencing, such as the preference for cytosine and disfavoring for guanine and thymine within and around the PAM sequence. We further incorporated the MERF model in a web-based tool that is freely accessible at www.ciao.helmholtz-hiri.de.
 
-This paper presents a machine learning approach to improve the prediction of bacterial CRISPRi guide efficiency.
-The workflow includes three steps: 1) accommodating the feature set for the CRISPR-Cas system or technique; 2) optimizing a machine learning model using automated machine learning; and 3) explaining the model using interpretable AI.
-The approach was applied to analyze three CRISPR-Cas genome-wide screens, revealing design rules for robust antimicrobial activity across different organisms and providing a predictive algorithm for gRNA design.
-The results demonstrate that the proposed approach can effectively predict guide efficiency across different CRISPR-Cas systems, enabling the development of more reliable prediction algorithms.
+When we compared the MERF model with existing tools, the performance of the gRNA design tool optimized for CRISPRi in eukaryotes was far from satisfying, questioning the robustness of prediction algorithms across organisms.
+In addition, the CRISPR-Cas systems exhibit diverse mechanisms albeit sharing similarities.
+The captured predictive patterns from one dataset thereby are at risk of poor generalization when applied across organisms and CRISPR-Cas techniques.
+To fill the gap, the machine learning approach that I present for CRISPRi could serve as a blueprint for the effective development of prediction algorithms.
+The explicit workflow includes three principle steps: 1) accomodating the feature set for the CRISPR-Cas system or technique; 2) optimizing a machine learning model using automated machine learning; 3) explaining the model using interpretable AI.
+I applied this workflow to analyze three other CRISPR-Cas genome-wide screens.
+From the CRISPR base editor essentiality screen in E.
+coli, I determined the PAM preference and sequence context in the editing window for efficient editing, such as A at the 2nd position of PAM, A/TT/TG downstream of PAM, and TC at the 4th to 5th position of gRNAs.
+From the CRISPR-Cas13a screen in E.
+coli, in addition to the strong correlation with the guide depletion, the target expression level was the strongest predictor in the model, supporting it as a main determinant of the activation of Cas13-induced immunity and better characterizing the CRISPR-Cas13 system.
+From the CRISPR-Cas12a screen in Klebsiella pneumoniae, I extracted the design rules for robust antimicrobial activity across K.
+pneumoniae strains and provided a predictive algorithm for gRNA design, facilitating CRISPR-Cas12a as an alternative technique to tackle antibiotic resistance.
  
-This thesis presents a machine learning approach for accurately predicting CRISPRi guide efficiency in bacteria, which provides insights into the determinants of efficient silencing and guide designs.
-The approach was systematically explored and developed into a robust model for use in other bacteria and CRISPR-Cas systems.
-Applying the approach in the analysis of independent CRISPR-Cas screens reveals not only the design rules but also the mechanisms of the CRISPR-Cas systems.
-The results demonstrate that machine learning can be applied to gain a deeper understanding and broader application of CRISPR-Cas systems.
+This thesis presents an accurate prediction algorithm for CRISPRi guide efficiency in bacteria, providing insights into the determinants of efficient silencing and guide designs.
+The systematic exploration has led to a robust machine learning approach for effective model development in other bacteria and CRISPR-Cas systems.
+Applying the approach in the analysis of independent CRISPR-Cas screens not only sheds light on the design rules but also the mechanisms of the CRISPR-Cas systems.
+Together, I demonstrate that applied machine learning paves the way to a deeper understanding and a broader application of CRISPR-Cas systems.
 
 
 
