@@ -1,10 +1,13 @@
 ---
-title: "Manuscript Title"
+title: "Improved prediction of bacterial CRISPRi guide efficiency through data integration and automated machine learning"
 date: null  # Defaults to date generated, but can specify like '2022-10-31'.
 keywords:
-  - markdown
-  - publishing
-  - manubot
+  - CRISRPi
+  - machine learning
+  - guide efficiency
+  - bacteria
+  - data integration
+  - automated machine learning
 lang: en-US
 authors:
   - github: johndoe
