@@ -54,8 +54,8 @@
   <meta name="dc.date" content="2023-02-08" />
   <meta name="citation_publication_date" content="2023-02-08" />
   <meta property="article:published_time" content="2023-02-08" />
-  <meta name="dc.modified" content="2023-02-08T17:15:29+00:00" />
-  <meta property="article:modified_time" content="2023-02-08T17:15:29+00:00" />
+  <meta name="dc.modified" content="2023-02-08T17:36:45+00:00" />
+  <meta property="article:modified_time" content="2023-02-08T17:36:45+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -123,11 +123,23 @@ or email to
 Jane Roe &lt;jane.roe@whatever.edu&gt;.</p>
 </div>
 <h2 class="page_break_before" id="abstract">Abstract</h2>
-<p>Among the defend strategies developed in microbes over millions of years, the innate adaptive CRISPR-Cas immune systems have spread across most of bacteria and archaea. The robust non-self-targeting nature and the diversity of CRISPR-Cas systems have laid the foundation for the flexibility, simplicity, and specificity of the CRISPR-based genetic editing tools. The efficient administration of CRISPR-based tools demands rational designs to maximize the on-target efficiency and off-target specificity. Specifically, the selection of guide RNAs (gRNAs), which play a crucial role in the target recognition of CRISPR-Cas systems, is non-trivial. Despite the fact that the emerging machine learning techniques provide a solution to aid in gRNA design with prediction algorithms, design rules for many CRISPR-Cas systems are ill-defined, hindering their broader applications.</p>
-<p>CRISPR interference (CRISPRi), an alternative gene silencing technique using a catalytically dead Cas protein to interfere with transcription, is one of these CRISPR-Cas systems. The under-investigated design rules for CRISPRi limit its promising application for functional interrogation, pathway manipulation, and genome-wide screens in bacteria. In this work, we first developed a state-of-art predictive machine learning model for guide silencing efficiency in bacteria leveraging the advantages of feature engineering, data integration, interpretable AI, and automated machine learning. We systematically investigated the influential factors that attribute to the extent of depletion in multiple CRISPRi genome-wide essentiality screens in Escherichia coli and demonstrated the surprising dominant contribution of gene-specific effects, such as gene expression level. This observation allowed us to segregate the confounding gene-specific effects using the mixed-effect random forest (MERF) model to provide a better estimate of guide efficiency, together with the improvement led by integrating multiple screens. The MERF model outperformed existing tools in the independent datasets, including small-scale fluorescence-based and miller assays involving only dozens of gRNAs and a high-throughput saturating screen involving 750 gRNAs. We next interpreted the predictive model to extract the design rules for robust gene silencing, such as the preference for cytosine and disfavoring for guanine and thymine within and around the PAM sequence. We further incorporated the MERF model in a web-based tool that is freely accessible at www.ciao.helmholtz-hiri.de.</p>
-<p>When we compared the MERF model with existing tools, the performance of the gRNA design tool optimized for CRISPRi in eukaryotes was far from satisfying, questioning the robustness of prediction algorithms across organisms.
+<p>CRISPRi is an effective tool for gene knockdown.
+However, the efficiency of CRISPRi varies greatly at different targets.
+The current methods for predicting CRISPRi efficiency are not accurate enough.
+This paper proposes a new method for predicting CRISPRi efficiency based on data integration and automated machine learning.
+The new method combines three models and uses an automated machine learning framework to generate a hybrid model.
+The new method is shown to outperform the current methods.</p>
+<p>The research problem: CRISPR interference (CRISPRi), an alternative gene silencing technique using a catalytically dead Cas protein to interfere with transcription, is one of these CRISPR-Cas systems.
+The under-investigated design rules for CRISPRi limit its promising application for functional interrogation, pathway manipulation, and genome-wide screens in bacteria.</p>
+<p>The solution proposed: In this work, we first developed a state-of-art predictive machine learning model for guide silencing efficiency in bacteria leveraging the advantages of feature engineering, data integration, interpretable AI, and automated machine learning.
+We systematically investigated the influential factors that attribute to the extent of depletion in multiple CRISPRi genome-wide essentiality screens in Escherichia coli and demonstrated the surprising dominant contribution of gene-specific effects, such as gene expression level.
+This observation allowed us to segregate the confounding gene-specific effects using the mixed-effect random forest (MERF) model to provide a better estimate of guide efficiency, together with the improvement led by integrating multiple screens.
+The MERF model outperformed existing tools in the independent datasets, including small-scale fluorescence-based and miller assays involving only dozens of gRNAs and a high-throughput saturating screen involving 750 gRNAs.
+We next interpreted the predictive model to extract the design rules for robust gene silencing, such as the preference for cytosine and disfavoring for guanine and thymine within and around the PAM sequence.
+We further incorporated the MERF model in a web-based tool that is freely accessible at www.ciao.helmholtz-hiri.de.</p>
+<p>The performance of the gRNA design tool optimized for CRISPRi in eukaryotes was far from satisfying, questioning the robustness of prediction algorithms across organisms.
 In addition, the CRISPR-Cas systems exhibit diverse mechanisms albeit sharing similarities.
-The captured predictive patterns from one dataset thereby are at risk of poor generalization when applied across organisms and CRISPR-Cas techniques.
+The captured predictive patterns from one dataset are at risk of poor generalization when applied across organisms and CRISPR-Cas techniques.
 To fill the gap, the machine learning approach that I present for CRISPRi could serve as a blueprint for the effective development of prediction algorithms.
 The explicit workflow includes three principle steps: 1) accomodating the feature set for the CRISPR-Cas system or technique; 2) optimizing a machine learning model using automated machine learning; 3) explaining the model using interpretable AI.
 I applied this workflow to analyze three other CRISPR-Cas genome-wide screens.
@@ -137,10 +149,10 @@ From the CRISPR-Cas13a screen in E.
 coli, in addition to the strong correlation with the guide depletion, the target expression level was the strongest predictor in the model, supporting it as a main determinant of the activation of Cas13-induced immunity and better characterizing the CRISPR-Cas13 system.
 From the CRISPR-Cas12a screen in Klebsiella pneumoniae, I extracted the design rules for robust antimicrobial activity across K.
 pneumoniae strains and provided a predictive algorithm for gRNA design, facilitating CRISPR-Cas12a as an alternative technique to tackle antibiotic resistance.</p>
-<p>This thesis presents an accurate prediction algorithm for CRISPRi guide efficiency in bacteria, providing insights into the determinants of efficient silencing and guide designs.
+<p>We propose a machine learning approach to predict the CRISPRi guide efficiency in bacteria, providing insights into the determinants of efficient silencing and guide designs.
 The systematic exploration has led to a robust machine learning approach for effective model development in other bacteria and CRISPR-Cas systems.
 Applying the approach in the analysis of independent CRISPR-Cas screens not only sheds light on the design rules but also the mechanisms of the CRISPR-Cas systems.
-Together, I demonstrate that applied machine learning paves the way to a deeper understanding and a broader application of CRISPR-Cas systems.</p>
+Together, we demonstrate that applied machine learning paves the way to a deeper understanding and a broader application of CRISPR-Cas systems.</p>
 <h2 class="page_break_before" id="references">References</h2>
 <!-- Explicitly insert bibliography here -->
 <div id="refs" role="doc-bibliography">
